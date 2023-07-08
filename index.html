@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richezy - Stock Market Online Class</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .banner {
+      background-color: #172B4D;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .banner h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .instructor-photo {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 50%;
+    }
+    
+    .contact {
+      background-color: #F5F6F8;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .feedback {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .feedback img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .course-details {
+      background-color: #F5F6F8;
+      padding: 20px;
+      text-align: left;
+    }
+    
+    .course-details h3 {
+      margin-top: 0;
+    }
+    
+    .course-details ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+    
+    .course-details ul li {
+      margin-bottom: 10px;
+    }
+    
+    .note {
+      background-color: #F5F6F8;
+      padding: 20px;
+      text-align: left;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <h1>Richezy.com</h1>
+    <img class="instructor-photo" src="images/PiyushAshtikar.jpg" alt="Instructor Photo">
+    <p>Instructor: Piyush Ashtikar <br> +91-9175118214</p>
+  </div>
+
+<style>
+  .contact img {
+    width: 50px;
+    height: 50px;
+  }
+</style>
+  
+  <div class="contact">
+    <h2>Contact Us</h2>
+    <p>
+      <a href="https://wa.me/9175118214"><img src="images/whatsapp.svg" alt="WhatsApp"></a>
+      <a href="tel:+919175118214"><img src="images/phone.svg" alt="Phone"></a>
+    </p>
+  </div>
+  
+  <div class="course-details">
+    <h2>Stage Analysis course details</h2>
+    
+    <h4>Highlights:</h4>
+    <ul>
+      <li>👉 Six live sessions of 2 hours each</li>
+      <li>👉 Max 30 students per batch (first come first serve)</li>
+      <li>👉 Suitable for absolute beginners and intermediates alike</li>
+      <li>👉 Classes only on Sundays</li>
+      <li>👉 PDF handbook to refer</li>
+      <li>👉 Lifetime access to stock discussion meetups</li>
+      <li>👉 Free stock screener for stock picking</li>
+      <li>👉 Handholding support in Stage Analysis Master group</li>
+    </ul>
+    
+    <h4>Topics:</h4>
+    <ol>
+      <li>Concept of Stage Analysis with examples</li>
+      <li>Stocks to be avoided at any cost</li>
+      <li>VCP and other stage 2 continuation patterns</li>
+      <li>Entry/Exit rules for traders</li>
+      <li>Entry/Exit rules for investors</li>
+      <li>Trading in IPO stocks</li>
+      <li>Trailing a winning trade for max gain</li>
+      <li>Pyramiding</li>
+      <li>Money/risk management</li>
+      <li>Position sizing</li>
+    </ol>
+    
+    <p>Reach out to whatsapp given above for pricing details</p>
+
+  </div>
+  
+  <div class="note">
+    <p>Note: We do not provide any stock market advisory services/recommendations. We are not SEBI registered financial advisors.</p>
+  </div>
+  
+
+<style>
+  .gallery img {
+    display: none;
+    margin-bottom: 10px;
+  }
+</style>
+
+<style>
+  .feedback {
+    text-align: left;
+  }
+</style>
+
+<div class="feedback">
+  <h2>Feedback from Previous Students</h2>
+  <div class="gallery" id="feedback-gallery"></div>
+</div>
+
+<script>
+  // JavaScript code to dynamically generate image tags and handle scroll event
+  var gallery = document.getElementById("feedback-gallery");
+  var images = [];
+
+  // Dynamically generate image tags
+  for (var i = 0; i <= 49; i++) {
+    var filename = "images/Feedback_" + i + ".jpg";
+    var alt = "Feedback " + i;
+
+    var img = document.createElement("img");
+    img.src = filename;
+    img.alt = alt;
+
+    gallery.appendChild(img);
+    images.push(img);
+  }
+
+  // Handle scroll event
+  function handleScroll() {
+    var threshold = window.innerHeight * 0.8; // Adjust threshold as needed
+
+    for (var i = 0; i < images.length; i++) {
+      var img = images[i];
+      var rect = img.getBoundingClientRect();
+
+      if (rect.top <= threshold) {
+        img.style.display = "block";
+        images.splice(i, 1);
+        i--;
+      }
+    }
+
+    if (images.length === 0) {
+      // Remove scroll event listener once all images are displayed
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+</script>
+
+
+
+
+<p> Last updated 08/07/2023</p>
+
+
+
+
+</body>
+</html>
