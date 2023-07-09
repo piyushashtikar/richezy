@@ -147,31 +147,24 @@
 
   
 
-<style>
-  .gallery img {
-    display: none;
-    margin-bottom: 10px;
-  }
-</style>
 
-<style>
-  .feedback {
-    text-align: left;
-  }
-</style>
 
 <div class="feedback">
   <h2>Feedback from Previous Students</h2>
   <div class="gallery" id="feedback-gallery"></div>
+  <button id="load-more-button" class="google-form-button">Load more</button>
 </div>
 
+
+
 <script>
-  // JavaScript code to dynamically generate image tags and handle scroll event
   var gallery = document.getElementById("feedback-gallery");
   var images = [];
+  var imagesPerLoad = 5; // Number of images to load per click
 
   // Dynamically generate image tags
-  for (var i = 0; i <= 49; i++) {
+  for (var i = 0; i <= 4; i++) {
+    // Generate the first 5 images initially
     var filename = "images/Feedback_" + i + ".jpg";
     var alt = "Feedback " + i;
 
@@ -183,29 +176,50 @@
     images.push(img);
   }
 
-  // Handle scroll event
-  function handleScroll() {
-    var threshold = window.innerHeight * 0.8; // Adjust threshold as needed
+  // Handle "Load more" button click event
+  var loadMoreButton = document.getElementById("load-more-button");
+  loadMoreButton.addEventListener("click", loadMoreImages);
 
-    for (var i = 0; i < images.length; i++) {
-      var img = images[i];
-      var rect = img.getBoundingClientRect();
+  function loadMoreImages() {
+    var startIndex = images.length;
 
-      if (rect.top <= threshold) {
-        img.style.display = "block";
-        images.splice(i, 1);
-        i--;
+    // Generate and append the next 5 images
+    for (var i = startIndex; i < startIndex + imagesPerLoad; i++) {
+      if (i > 49) {
+        // Break if there are no more images to load
+        loadMoreButton.style.display = "none";
+        break;
       }
-    }
 
-    if (images.length === 0) {
-      // Remove scroll event listener once all images are displayed
-      window.removeEventListener("scroll", handleScroll);
+      var filename = "images/Feedback_" + i + ".jpg";
+      var alt = "Feedback " + i;
+
+      var img = document.createElement("img");
+      img.src = filename;
+      img.alt = alt;
+
+      gallery.appendChild(img);
+      images.push(img);
     }
   }
-
-  window.addEventListener("scroll", handleScroll);
 </script>
+
+
+<style>
+  .google-form-button {
+    background-color: #288904;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .google-form-button:hover {
+    background-color: #1e8e3e;
+  }
+</style>
 
 
 
